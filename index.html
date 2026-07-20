@@ -372,7 +372,75 @@
     margin: 2rem auto;
   }
 
-  /* ── RESPONSIVE ── */
+  /* ── QR CODES ── */
+  .qr-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .qr-card {
+    background: var(--white);
+    border: 1px solid var(--linen);
+    border-radius: 2px;
+    padding: 1.8rem 1.6rem;
+    text-align: center;
+    width: 200px;
+    transition: box-shadow 0.25s;
+  }
+  .qr-card:hover { box-shadow: 0 8px 28px rgba(107,79,58,0.10); }
+  .qr-img-wrap {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 1px solid var(--linen);
+    border-radius: 2px;
+  }
+  .qr-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--linen);
+    border-radius: 2px;
+    gap: 0.4rem;
+  }
+  .qr-placeholder span { font-size: 2rem; }
+  .qr-placeholder p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    line-height: 1.5;
+    font-style: normal;
+  }
+  .qr-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .qr-sub {
+    font-size: 0.85rem;
+    color: #a08878;
+    font-style: italic;
+  }
+
+
   @media (max-width: 500px) {
     .cards { grid-template-columns: 1fr 1fr; }
   }
@@ -413,56 +481,6 @@
 </div>
 
 
-<!-- ══════════ NOSSA HISTÓRIA ══════════ -->
-<section id="nossa-historia">
-  <p class="section-eyebrow">Nossa História</p>
-  <h2 class="section-title">Um amor para sempre</h2>
-  <p class="section-text">
-    Nos conhecemos numa tarde de outono e, desde então, cada dia se tornou
-    mais bonito ao seu lado. Agora chegou o momento de celebrar junto com as
-    pessoas que amamos o início de uma nova aventura.
-  </p>
-
-  <div class="verse-block">
-    <p>
-      "Um só pode ser vencido, mas dois resistirão. E a corda de três fios
-      não se rompe facilmente."
-    </p>
-    <span class="verse-ref">Eclesiastes 4:12</span>
-  </div>
-</section>
-
-<div class="sep"></div>
-
-
-<!-- ══════════ CONTAGEM REGRESSIVA ══════════ -->
-<section id="contagem">
-  <p class="section-eyebrow">Falta pouco</p>
-  <h2 class="section-title">Contagem Regressiva</h2>
-
-  <div class="countdown-wrap">
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-dias">--</span>
-      <span class="countdown-label">Dias</span>
-    </div>
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-horas">--</span>
-      <span class="countdown-label">Horas</span>
-    </div>
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-min">--</span>
-      <span class="countdown-label">Minutos</span>
-    </div>
-    <div class="countdown-unit">
-      <span class="countdown-num" id="cd-seg">--</span>
-      <span class="countdown-label">Segundos</span>
-    </div>
-  </div>
-</section>
-
-<div class="sep"></div>
-
-
 <!-- ══════════ DETALHES DO EVENTO ══════════ -->
 <section id="detalhes">
   <p class="section-eyebrow">Detalhes</p>
@@ -475,47 +493,24 @@
       <p>Sábado<br>19 de Setembro de 2026</p>
     </div>
     <div class="card">
-      <div class="card-icon">🕕</div>
-      <h3>Horário</h3>
-      <p>Cerimônia às 18h00<br>Recepção às 19h30</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">📍</div>
-      <h3>Local</h3>
-      <p>Samaipata<br>Santa Cruz, Bolivia</p>
+      <div class="card-icon">📍🕕</div>
+      <h3>Local & Horário</h3>
+      <p>Samaipata, Santa Cruz, Bolivia<br>Recepção às 11h00<br>Cerimônia às 11h30</p>
     </div>
     <div class="card">
       <div class="card-icon">🎵</div>
       <h3>Música</h3>
-      <p>Banda ao vivo &<br>DJ após a cerimônia</p>
+      <p>DJ na cerimônia<br>Banda ao vivo após</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">👔</div>
+      <h3>Dress Code</h3>
+      <p>Formal / Sport Fino</p>
     </div>
     <div class="card" style="cursor:pointer;" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">
       <div class="card-icon">💌</div>
       <h3>Confirmação</h3>
       <p>Confirme sua<br>presença aqui!</p>
-    </div>
-  </div>
-</section>
-
-<div class="sep"></div>
-
-
-<!-- ══════════ DRESS CODE ══════════ -->
-<section id="dress-code">
-  <p class="section-eyebrow">Dress Code</p>
-  <h2 class="section-title">Código de Vestimenta</h2>
-  <p class="section-text">
-    Traje passeio completo. Pedimos gentilmente que evitem as cores
-    branco e preto sólidos — reservamos o branco para a noiva ✨
-  </p>
-
-  <div class="palette-wrap">
-    <div class="palette">
-      <div class="swatch" style="background:#D4B896;" data-label="Champagne"></div>
-      <div class="swatch" style="background:#C9B8A8;" data-label="Nude"></div>
-      <div class="swatch" style="background:#9CAFA8;" data-label="Sálvia"></div>
-      <div class="swatch" style="background:#B8976A;" data-label="Caramelo"></div>
-      <div class="swatch" style="background:#7B8FA1;" data-label="Azul"></div>
     </div>
   </div>
 </section>
@@ -529,10 +524,44 @@
   <h2 class="section-title">Sugestão de Presentes</h2>
   <p class="section-text">
     Sua presença já é o maior presente! Mas se quiser nos presentear,
-    adoraríamos contribuições para nossa lua de mel ou nosso novo lar. 🏡
+    adoraríamos contribuições para nossa lua de mel. 🌙
   </p>
-  <br>
-  <a href="#" class="btn-gold">Ver Lista de Presentes</a>
+
+  <div class="qr-grid">
+    <div class="qr-card">
+      <!--
+        💳 QR CODE 1:
+        Substitua o src abaixo pelo caminho do seu QR code.
+        Ex: src="qrcode-pix.png"  ou  src="https://..."
+      -->
+      <div class="qr-img-wrap">
+        <img src="" alt="QR Code 1" class="qr-img" id="qr1-img" onerror="this.style.display='none'" />
+        <div class="qr-placeholder" id="qr1-placeholder">
+          <span>📷</span>
+          <p>Substitua o src<br>pelo seu QR Code</p>
+        </div>
+      </div>
+      <h4 class="qr-label">Pagamento 1</h4>
+      <p class="qr-sub">ex: Pix · QR · Transferência</p>
+    </div>
+
+    <div class="qr-card">
+      <!--
+        💳 QR CODE 2:
+        Substitua o src abaixo pelo caminho do seu QR code.
+        Ex: src="qrcode-banco.png"  ou  src="https://..."
+      -->
+      <div class="qr-img-wrap">
+        <img src="" alt="QR Code 2" class="qr-img" id="qr2-img" onerror="this.style.display='none'" />
+        <div class="qr-placeholder" id="qr2-placeholder">
+          <span>📷</span>
+          <p>Substitua o src<br>pelo seu QR Code</p>
+        </div>
+      </div>
+      <h4 class="qr-label">Pagamento 2</h4>
+      <p class="qr-sub">ex: Pix · QR · Transferência</p>
+    </div>
+  </div>
 </section>
 
 <div class="sep"></div>
@@ -545,21 +574,7 @@
   <p class="section-text">
     Samaipata, Santa Cruz, Bolivia
   </p>
-  <!--
-    🗺️ TROQUE O MAPA:
-    Vá em Google Maps → compartilhar → incorporar mapa → copie o iframe.
-    Cole aqui substituindo o iframe abaixo.
-  -->
-  <iframe
-    class="map-embed"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60878.5!2d-63.8833!3d-18.1833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f3f8b3e0e8a9a5%3A0x5c8c5b3b3b3b3b3b!2sSamaipata%2C+Santa+Cruz%2C+Bolivia!5e0!3m2!1spt-BR!2sbr!4v1"
-    allowfullscreen
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Local do casamento - Samaipata"
-  ></iframe>
-  <br><br>
-  <a
+<a
     href="https://maps.google.com/?q=Samaipata,+Santa+Cruz,+Bolivia"
     target="_blank"
     class="btn-gold"
