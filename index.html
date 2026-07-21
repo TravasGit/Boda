@@ -25,7 +25,7 @@
   /* HERO */
   .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; overflow: hidden; }
   .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.10) 40%, rgba(255,253,240,0.82) 70%, rgba(255,253,240,1) 92%); }
+  .hero::after { content: none; }
   .hero-sf-tl, .hero-sf-tr { position: absolute; top: 0; z-index: 1; opacity: 0.93; width: 150px; }
   .hero-sf-tl { left: 0; transform: rotate(-15deg) translate(-18px,-8px); }
   .hero-sf-tr { right: 0; transform: rotate(15deg) translate(18px,-8px); }
@@ -102,24 +102,11 @@
 
 <!-- HERO -->
 <div class="hero" id="topo">
-  <!-- 📸 TROQUE A FOTO: substitua o src abaixo -->
-  <img class="hero-photo" src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=900&q=80" alt="Foto do casal"/>
-
-  <div class="hero-content">
-    <div class="hero-names">
-      Mayra
-      <span class="hero-ampersand">&amp;</span>
-      Rafael
-    </div>
-    <div class="hero-date">
-      Sábado · 19 de Septiembre de 2026 · 11h00<br>
-      Sábado · 19 de Setembro de 2026 · 11h00
-    </div>
-    <div class="divider"></div>
-  </div>
+  <!-- 📸 Imagem do topo -->
+  <img class="hero-photo" src="Anillos2.png" alt="Mayra y Rafael"/>
 
   <a class="scroll-hint" href="#detalhes">
-    <span>Rolar / Desplazar</span>
+    <span>Desplazar / Rolar</span>
     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
   </a>
 </div>
