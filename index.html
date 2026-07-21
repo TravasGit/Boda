@@ -31,8 +31,8 @@
   body { background: var(--warm-white); color: var(--text); font-family: 'Cormorant Garamond', serif; font-weight: 300; overflow-x: hidden; }
 
   /* HERO */
-  .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; overflow: hidden; }
-  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .hero { position: relative; width: 100%; aspect-ratio: 16/9; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; overflow: hidden; }
+  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
   .hero::after { content: none; }
   .hero-sf-tl, .hero-sf-tr { position: absolute; top: 0; z-index: 1; opacity: 0.93; width: 150px; }
   .hero-sf-tl { left: 0; transform: rotate(-15deg) translate(-18px,-8px); }
@@ -106,7 +106,7 @@
   /* COUNTDOWN OVERLAY */
   .hero-countdown {
     position: absolute;
-    bottom: 7%;
+    bottom: 28%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -116,26 +116,34 @@
   .cd-units {
     display: flex;
     justify-content: center;
-    gap: clamp(1.2rem, 4vw, 3rem);
+    gap: clamp(0.8rem, 3vw, 2rem);
   }
   .cd-unit { display: flex; flex-direction: column; align-items: center; }
   .cd-num {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-size: clamp(1.6rem, 4vw, 3rem);
     color: #64450F;
     line-height: 1;
-    text-shadow: 0 1px 8px rgba(255,245,210,0.6);
+    text-shadow: 0 1px 6px rgba(255,245,210,0.5);
   }
   .cd-label {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.5rem, 1.5vw, 0.65rem);
-    letter-spacing: 0.25em;
+    font-size: clamp(0.42rem, 1.2vw, 0.55rem);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #64450F;
     opacity: 0.85;
     margin-top: 0.1rem;
   }
 
+  /* MOBILE: ensure name and countdown visible */
+  @media (max-width: 600px) {
+    .hero { min-height: 56vw; }
+    .hero-photo { object-position: center 20%; }
+    .hero-countdown { bottom: 22%; }
+    .cd-num { font-size: clamp(1.3rem, 6vw, 2rem); }
+    .cd-label { font-size: 0.45rem; letter-spacing: 0.15em; }
+  }
 
 </style>
 </head>
