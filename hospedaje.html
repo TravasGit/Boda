@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospedaje y Dicas — Mayra &amp; Rafael</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --butter:    #FBE9BB;
+    --butter-dk: #e8d49e;
+    --blue:      #7D95B7;
+    --blue-lt:   #a8bdd4;
+    --sage:      #A3AB86;
+    --sage-dk:   #7a8160;
+    --warm-white:#F8F8F8;
+    --linen:     #f0e8cc;
+    --text:      #3d3a2e;
+    --brown:     #5a5340;
+    --white:     #FFFFFF;
+    --gold:      #64450F;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--text); font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+
+  /* HEADER */
+  .page-header {
+    background: var(--butter);
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 3px solid var(--butter-dk);
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-decoration: none;
+    margin-bottom: 1.2rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--sage-dk); }
+  .page-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .page-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sage-dk);
+    margin-top: 0.5rem;
+  }
+
+  /* STRIP */
+  .strip { background: var(--butter); height: 4px; }
+
+  /* CONTENT */
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* SECTION BLOCKS */
+  .info-block {
+    margin-bottom: 3rem;
+  }
+  .info-block-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--blue);
+    border-bottom: 2px solid var(--butter);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .info-block p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+  .info-block strong { color: var(--gold); font-weight: 400; }
+
+  /* OPTION CARDS */
+  .option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+  }
+  .option-card {
+    background: var(--white);
+    border: 1px solid var(--linen);
+    border-top: 3px solid var(--blue);
+    border-radius: 3px;
+    padding: 1.4rem 1.2rem;
+  }
+  .option-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+  .option-card p {
+    font-size: 0.97rem;
+    line-height: 1.65;
+    color: var(--text);
+    margin-bottom: 0;
+  }
+  .option-card a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .option-card a:hover { text-decoration: underline; }
+  .option-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+
+  /* TIP BOX */
+  .tip-box {
+    background: var(--linen);
+    border-left: 4px solid var(--sage);
+    border-radius: 2px;
+    padding: 1.4rem 1.6rem;
+    margin-top: 1.2rem;
+  }
+  .tip-box p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--sage-dk);
+    font-style: italic;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--linen);
+    border-top: 3px solid var(--sage);
+    border-radius: 3px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .contact-card p { font-size: 1rem; line-height: 1.7; color: var(--text); margin: 0; }
+  .contact-card strong { display: block; color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    background: var(--brown);
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .names-footer { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--butter); }
+  footer p { font-family: 'Montserrat', sans-serif; font-size: 0.55rem; letter-spacing: 0.2em; color: var(--linen); margin-top: 0.4rem; text-transform: uppercase; }
+
+  @media (max-width: 500px) { .option-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <a class="back-link" href="index.html">
+    ← Volver / Voltar
+  </a>
+  <div class="page-title">Hospedaje y Dicas</div>
+  <p class="page-subtitle">Información útil para tu viaje · Informações úteis para sua viagem</p>
+</header>
+
+<div class="strip"></div>
+
+<div class="content">
+
+  <!-- INTRO -->
+  <div class="info-block">
+    <p>✈️ Queremos que disfrutes al máximo tu visita a Samaipata. Aquí encontrarás información práctica para que tu viaje sea cómodo y sin preocupaciones.</p>
+  </div>
+
+  <!-- HOSPEDAJE -->
+  <div class="info-block">
+    <div class="info-block-title">🏡 Hospedaje</div>
+    <p>Samaipata es un pueblo pequeño y muy tranquilo. La mayoría de los alojamientos se encuentran a pocos minutos caminando de la plaza principal, por lo que prácticamente no importa dónde te hospedes: todo estará muy cerca.</p>
+    <p>Te recomendamos reservar con anticipación, especialmente si viajas durante fines de semana o temporadas altas.</p>
+
+    <div class="option-grid">
+      <div class="option-card">
+        <span class="option-icon">🏠</span>
+        <h4>Airbnb</h4>
+        <p>Excelentes casas, cabañas y departamentos para todos los presupuestos.</p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🏨</span>
+        <h4>Hotel Casa Blanca</h4>
+        <p><a href="tel:+59177084234">📞 +591 77084234</a></p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🏨</span>
+        <h4>Hotel La Vida es Bella</h4>
+        <p><a href="tel:+59178094580">📞 +591 78094580</a></p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🏨</span>
+        <h4>Yvy Casa Hotel</h4>
+        <p><a href="tel:+59176657760">📞 +591 76657760</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DINERO -->
+  <div class="info-block">
+    <div class="info-block-title">💵 Dinero y Pagos</div>
+    <p>En Samaipata muchos restaurantes, cafeterías y pequeños comercios <strong>no aceptan tarjetas de crédito o débito</strong>, por lo que te recomendamos llevar dinero en efectivo.</p>
+    <p>Lo ideal es cambiar dinero antes de llegar al pueblo. Puedes hacerlo en:</p>
+    <div class="option-grid">
+      <div class="option-card">
+        <span class="option-icon">✈️</span>
+        <h4>Aeropuerto</h4>
+        <p>Aeropuerto Internacional Viru Viru</p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🏦</span>
+        <h4>Casas de Cambio</h4>
+        <p>Alrededor de la Plaza 24 de Septiembre, Santa Cruz de la Sierra.</p>
+      </div>
+    </div>
+    <div class="tip-box">
+      <p>En Samaipata existen únicamente <strong>dos cajeros automáticos (ATM):</strong> Banco Ganadero y Banco Unión. En ocasiones ambos pueden quedarse sin efectivo, especialmente durante fines de semana largos y feriados.</p>
+    </div>
+  </div>
+
+  <!-- CÓMO LLEGAR -->
+  <div class="info-block">
+    <div class="info-block-title">🚐 Cómo Llegar desde Santa Cruz</div>
+    <p>La forma más económica y utilizada es mediante las <strong>Mini Vans El Samaipateño</strong> o <strong>El Fuerte</strong>.</p>
+    <p>📍 <strong>Punto de salida:</strong> A una cuadra del Monumento al Chiriguano, sobre la Doble Vía La Guardia.</p>
+    <p>Las vans salen durante todo el día y parten una vez que completan su capacidad.</p>
+    <p>💰 <strong>Costo aproximado: Bs. 45 por persona.</strong></p>
+    <p style="margin-top:0.5rem;">
+      <a href="https://maps.google.com/?q=Monumento+al+Chiriguano+Santa+Cruz+Bolivia" target="_blank" style="color:var(--blue);font-size:1rem;">
+        📍 Ver punto de salida en Google Maps →
+      </a>
+    </p>
+
+    <div class="option-grid" style="margin-top:1.5rem;">
+      <div class="option-card">
+        <span class="option-icon">📏</span>
+        <h4>Distancia</h4>
+        <p>Santa Cruz → Samaipata<br><strong>120 km</strong></p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🕒</span>
+        <h4>Tiempo de viaje</h4>
+        <p>Aprox. <strong>2h 30min</strong><br>según tráfico y carretera</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICIO PRIVADO -->
+  <div class="info-block">
+    <div class="info-block-title">🚐 Servicio Privado desde el Aeropuerto</div>
+    <p>Si prefieres mayor comodidad o llegas con mucho equipaje, estas mismas empresas ofrecen servicio privado (remise). Te recogerán directamente en el aeropuerto.</p>
+    <p>💰 <strong>Costo aproximado: Bs. 400 o USD 40 por la van completa.</strong></p>
+    <p>Te recomendamos reservar con anticipación.</p>
+
+    <div class="option-grid">
+      <div class="option-card">
+        <span class="option-icon">🚐</span>
+        <h4>El Samaipateño</h4>
+        <p><a href="tel:+59176633391">📞 +591 76633391</a></p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🚐</span>
+        <h4>El Fuerte</h4>
+        <p><a href="tel:+59167717774">📞 +591 67717774</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERNET -->
+  <div class="info-block">
+    <div class="info-block-title">📱 Internet y Telefonía</div>
+    <p>Si vienes del extranjero, te recomendamos comprar un chip de <strong>ENTEL</strong> apenas llegues al Aeropuerto Internacional Viru Viru.</p>
+    <div class="tip-box">
+      <p>Solicita que registren la línea a tu nombre como visitante extranjero, activen el servicio y carguen crédito para que tengas internet desde tu llegada. Así podrás usar WhatsApp, Google Maps y otras apps durante todo el viaje.</p>
+    </div>
+  </div>
+
+  <!-- MOVERSE EN SAMAIPATA -->
+  <div class="info-block">
+    <div class="info-block-title">🚶 Moverse dentro de Samaipata</div>
+    <p>Una de las cosas que más nos gusta de Samaipata es que casi todo puede recorrerse caminando. La plaza principal, restaurantes, cafeterías, hoteles y tiendas se encuentran a pocos minutos entre sí.</p>
+    <div class="option-grid">
+      <div class="option-card">
+        <span class="option-icon">🛵</span>
+        <h4>Moto Taxi</h4>
+        <p>Disponible via grupo de WhatsApp local.</p>
+      </div>
+      <div class="option-card">
+        <span class="option-icon">🚐</span>
+        <h4>Traslados Privados</h4>
+        <p>Las mismas vans pueden hacer traslados dentro de la región. El costo dependerá de la distancia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="info-block">
+    <div class="info-block-title">☎️ ¿Necesitas Ayuda?</div>
+    <p>Si por cualquier motivo no logramos responderte de inmediato, nuestra familia estará encantada de ayudarte.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <p><strong>Cinthia (mamá de Mayra)</strong><a href="tel:+59170751841" style="color:var(--blue);text-decoration:none;display:block;margin-top:0.3rem;">📞 +591 70751841</a></p>
+      </div>
+      <div class="contact-card">
+        <p><strong>Freddy (papá de Mayra)</strong><a href="tel:+59171727624" style="color:var(--blue);text-decoration:none;display:block;margin-top:0.3rem;">📞 +591 71727624</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONSEJO FINAL -->
+  <div class="info-block">
+    <div class="info-block-title">💛 Nuestro Mejor Consejo</div>
+    <div class="tip-box">
+      <p>Si tu agenda lo permite, te recomendamos llegar uno o dos días antes o quedarte un poco más después de la boda. Samaipata es uno de los pueblos más encantadores de Bolivia, ideal para descansar, disfrutar de su gastronomía, recorrer sus cafeterías y conectarse con la naturaleza.</p>
+      <br>
+      <p>Nos hace muy felices que formes parte de este momento tan especial. ¡Estamos deseando compartir este día contigo! 🌻</p>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<footer>
+  <div class="names-footer">Mayra &amp; Rafael</div>
+  <p>19 · 09 · 2026 · Samaipata, Bolivia · Para siempre</p>
+</footer>
+
+</body>
+</html>
